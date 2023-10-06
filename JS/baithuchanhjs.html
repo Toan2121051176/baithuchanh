@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="counter"></script>
-        <title>Chu Thế TOàn</title>
+        <script>
+            document.addEventListener('DOMContentLoaded', function(){
+                document.querySelector('#form').onsubmit = function(){
+                    const name = document.querySelector('#name').value;
+                    alert('Hello ${name}!');
+                };
+            });
+        </script>
+        <tille>Chu Thế Toàn</tille>
     </head>
-        <body>
-            <h1 id="counter">0</h1>
-            <button>nhấn vào đây </button>
-        </body>
+    <body>
+        <form id="from">
+            <input type="text" id="name" autofocus placeholder="Name">
+            <input tupe="submit">
+        </form>
+    </body>
 </html>
