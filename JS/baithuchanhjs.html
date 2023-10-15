@@ -1,20 +1,21 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <script>
-            document.addEventListener('DOMContentLoaded', function(){
-                document.querySelector('#form').onsubmit = function(){
-                    const name = document.querySelector('#name').value;
-                    alert('Hello ${name}!');
-                };
-            });
-        </script>
-        <tille>Chu Thế Toàn</tille>
-    </head>
-    <body>
-        <form id="from">
-            <input type="text" id="name" autofocus placeholder="Name">
-            <input tupe="submit">
-        </form>
-    </body>
+<br>
+<head>
+</head>
+<br>
+    
+    <input type="number" id="a" placeholder="Nhập số a">
+    <br><input type="number" id="b" placeholder="Nhập số b"></br>
+    <br><button onclick="tinhTong()">Tính tổng</button></br>
+    <p id="result"></p>
+
+    <script>
+        function tinhTong() {
+            var a = parseInt(document.getElementById("a").value);
+            var b = parseInt(document.getElementById("b").value);
+            var sum = a + b;
+            document.getElementById("result").innerHTML = "Tổng hai số là: " + sum;
+        }
+    </script>
+</body>
 </html>
