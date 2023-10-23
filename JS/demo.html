@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máy tính</title>
+    <style>.consle{
+        border: none;
+        background-color: antiquewhite;
+        border-radius: 15px;
+    }
+    .consle input{
+        background-color:#fff;
+        border: none ;
+    
+        width:  90%;
+        height: 35px;
+        margin-bottom: 0px;
+       margin-left: 20px;
+    }
+    .máy_tính{
+        width: 400px;
+        height: 520px;
+        border: 1px solid black;
+        margin: 1px auto;
+        border-radius: 15px;
+        margin-top: 50px;
+        background-color: antiquewhite;
+    }
+    .keyboard{
+        background-color: azure;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        margin: 20px;
+        padding: 10px;
+    }
+    .keyboard button{
+        width: 50px;
+        height: 25px;
+        border-radius: 5px;
+        margin: 15px;
+    }
+    .logo{
+        position: sticky;
+        text-align: center;
+        color:red;
+    
+    }
+    #inputb{
+        text-align: right;
+    }
+    </style>
+</head>
+<body>
+    <div class="máy_tính">
+        <div class="logo">
+            <h1>Casino</h1>
+        </div>
+        <div class="consle"> 
+            <input id="inputa"><br>
+            <input id="inputkq">
+        </div>
+        <div class="keyboard">
+            <button onclick="button7()" value="" type="text">7</button>
+            <button onclick="button8()" value="" type="text">8</button>
+            <button onclick="button9()" value="" type="text">9</button>
+            <button onclick="buttonchia()" value="" type="text">/</button>
+            <button onclick="button4()" value="" type="text">4</button>
+            <button onclick="button5()" value="" type="text">5</button>
+            <button onclick="button6()" value="" type="text">6</button>
+            <button onclick="buttonx()" value="" type="text">x</button>
+            <button onclick="button1()" value="" type="text">1</button>
+            <button onclick="button2()" value="" type="text">2</button>
+            <button onclick="button3()" value="" type="text">3</button>
+            <button onclick="buttontru()" value="" type="text">-</button>
+            <button onclick="button0()" value="" type="text">0</button>
+            <button onclick="button()" value="" type="text">.</button>
+            <button onclick="buttonbang()" value="" type="text">=</button>
+            <button onclick="buttoncong()" value="" type="text">+</button>
+            <button onclick="buttonAC()" value="" type="text">AC</button>
+            <button onclick="buttonRS()" value="" type="text">reset</button>
+        </div>
+    </div>
+</body>
+<script>
+function button1(){
+    document.getElementById("inputa").value += 1;
+}
+function button2(){
+    document.getElementById("inputa").value += 2;
+}
+function button3(){
+    document.getElementById("inputa").value += 3;
+}
+function button4(){
+    document.getElementById("inputa").value += 4;
+}
+function button5(){
+    document.getElementById("inputa").value += 5;
+}
+function button6(){
+    document.getElementById("inputa").value += 6;
+}
+function button7(){
+    document.getElementById("inputa").value += 7;
+}
+function button8(){
+    document.getElementById("inputa").value += 8;
+}
+function button9(){
+    document.getElementById("inputa").value += 9;
+}
+function button(){
+    document.getElementById("inputa").value += ".";
+}
+function buttoncong(){
+    document.getElementById("inputa").value += "+";
+}
+function buttontru(){
+    document.getElementById("inputa").value += "-";
+}
+function buttonx(){
+    document.getElementById("inputa").value += "*";
+}
+function buttonchia(){
+    document.getElementById("inputa").value += "/";
+}
+function buttonAC() {
+   const valueinput = document.getElementById("inputa");
+   valueinput.value = valueinput.value.slice(0, -1);
+}
+
+function buttonRS(){
+    const valueinput=document.querySelectorAll("input");
+    for(let i=0;i<valueinput.length;i++){
+        valueinput[i].value="";
+    }
+}
+function buttonbang(){
+    const input = document.getElementById("inputa").value;
+    const result = eval(input);
+    document.getElementById("inputkq").value = result;
+}
+
+</script>
+
+
+</html>
