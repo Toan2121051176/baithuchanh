@@ -3,24 +3,78 @@
 <title>Chu Thế Toàn</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<body class="w3-container">
+<body>
 
-<h2>Displaying Examples</h2>
-<p>The w3-panel class can be used to display examples:</p>
+<div class="w3-container">
+  <h2>Filter Table</h2>
+  <p>Search for a name in the input field.</p>
 
-<div class="w3-panel w3-card w3-light-grey">
-  <h3>Example</h3>
-  <div class="w3-container w3-white">
-    <p>
-    <ul class="w3-ul w3-card-4" style="width:50%">
-      <li>Jill</li>
-      <li>Eve</li>
-      <li>Adam</li>
-    </ul>
-    </p>
-  </div>
-  <p>A list displayed as a card.</p>
+  <input class="w3-input w3-border w3-padding" type="text" placeholder="Search for names.." id="myInput" onkeyup="myFunction()">
+
+  <table class="w3-table-all w3-margin-top" id="myTable">
+    <tr>
+      <th style="width:60%;">Name</th>
+      <th style="width:40%;">Country</th>
+    </tr>
+    <tr>
+      <td>Alfreds Futterkiste</td>
+      <td>Germany</td>
+    </tr>
+    <tr>
+      <td>Berglunds snabbkop</td>
+      <td>Sweden</td>
+    </tr>
+    <tr>
+      <td>Island Trading</td>
+      <td>UK</td>
+    </tr>
+    <tr>
+      <td>Koniglich Essen</td>
+      <td>Germany</td>
+    </tr>
+    <tr>
+      <td>Laughing Bacchus Winecellars</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <td>Magazzini Alimentari Riuniti</td>
+      <td>Italy</td>
+    </tr>
+    <tr>
+      <td>North/South</td>
+      <td>UK</td>
+    </tr>
+    <tr>
+      <td>Paris specialites</td>
+      <td>France</td>
+    </tr>
+  </table>
+
+  <p><strong>Tip:</strong> Remove toUpperCase() if you want to perform a case-sensitive search.</p>
+  <p>Change tr[i].getElementsByTagName('td')[0] to [1] if you want to search for "Country" (index 1) instead of "Name" (index 0).</p>
 </div>
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
 
 </body>
 </html>
+
