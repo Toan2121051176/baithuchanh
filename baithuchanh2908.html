@@ -11,20 +11,24 @@
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', function(){
-            document.querySelectorAll('.color-change').forEach(function(button) {
-                button.onclick = function() {
-                    document.querySelector('#hello').style.color = button.dataset.color;
+            document.querySelectorAll('#new-task').onsubmit = function() {
+                const li = document.createElement('li');
+                li.innerHTML = documen.querySelector('#task').value;
+                document.querySelector('#task').append(li);
+                document.querySelector('task').value = '';
+                return false;
                 };
             });
-        });
     </script>
 </head>
 
 <body>
-    <h1 id="hello">Chu Thế Toàn</h1>
-    <button class="color-change" data-color="red">Red</button>
-    <button class="color-change" data-color="blue">Blue</button>
-    <button class="color-change" data-color="green">Green</button>
+    <h1>Chu Thế Toàn</h1>
+    <ul id="task"></ul>
+    <form id="new-task">
+        <input type="text" id="task" autofocus placeholder="New task">
+        <input type="submit">
+    </form>
 
 </body>
 
