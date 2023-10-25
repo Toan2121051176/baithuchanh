@@ -1,35 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CHu Thế Toàn</title>
-    <style>
-        html {
-            background-color: rgb(229, 226, 222);
-        }
-    </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', function(){
-            document.querySelectorAll('#new-task').onsubmit = function() {
-                const li = document.createElement('li');
-                li.innerHTML = documen.querySelector('#task').value;
-                document.querySelector('#task').append(li);
-                document.querySelector('task').value = '';
-                return false;
-                };
-            });
-    </script>
+ 
+    <title>CHu Thế Toàn</title> 
 </head>
 
 <body>
     <h1>Chu Thế Toàn</h1>
-    <ul id="task"></ul>
+    <ul id="tasks">
+
+    </ul>
     <form id="new-task">
-        <input type="text" id="task" autofocus placeholder="New task">
+        <input type="text" id="task" autofocus placeholder="New Task">
         <input type="submit">
     </form>
 
 </body>
-
+<script src="./demo.js"></script>
 </html>
