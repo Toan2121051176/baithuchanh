@@ -4,19 +4,36 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-    $("button").click(function(){
-    $("div").animate({left: '250px'});
+    $("#flip").click(function(){
+    $("#panel").slideDown(5000);
+  });
+  $("#stop").click(function(){
+    $("#panel").stop();
   });
 });
-</script> 
+</script>
+<style> 
+#panel, #flip {
+  padding: 5px;
+  font-size: 18px;
+  text-align: center;
+  background-color: #555;
+  color: white;
+  border: solid 1px #666;
+  border-radius: 3px;
+}
+
+#panel {
+  padding: 50px;
+  display: none;
+}
+</style>
 </head>
 <body>
+ 
+<button id="stop">nhấn dừng hiện ứng</button>
 
-<button>nhấn để di chuyển</button>
-
-
-
-<div style="background:#d31316;height:100px;width:150px;position:absolute;">Chu Thế Toàn</div>
-
+<div id="flip">nhấn để biết thêm về tôi</div>
+<div id="panel">Chu Thế Toàn </div>
 </body>
 </html>
