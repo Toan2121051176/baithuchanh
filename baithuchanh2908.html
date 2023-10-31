@@ -1,20 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
- 
-    <title>CHu Thế Toàn</title> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#hide").click(function(){
+    $("p").hide();
+  });
+  $("#show").click(function(){
+    $("p").show();
+  });
+});
+</script>
 </head>
-
 <body>
-    <h1>Chu Thế Toàn</h1>
-    <ul id="tasks">
 
-    </ul>
-    <form id="new-task">
-        <input type="text" id="task" autofocus placeholder="New Task">
-        <input type="submit">
-    </form>
+<p>Chu Thế Toàn </p>
+
+<button id="hide">Hide</button>
+<button id="show">Show</button>
 
 </body>
-<script src="./demo.js"></script>
 </html>
