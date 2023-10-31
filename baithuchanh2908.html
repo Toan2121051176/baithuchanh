@@ -4,17 +4,21 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script>
   $(document).ready(function(){
-    $("button").click(function(){
-      $("#p1").css("color", "red").slideUp(2000).slideDown(2000);
+    $("#btn1").click(function(){
+      alert("Text: " + $("#test").text());
+    });
+    $("#btn2").click(function(){
+      alert("HTML: " + $("#test").html());
     });
   });
   </script>
   </head>
   <body>
   
-  <p id="p1">CHu Thế Toàn</p>
+  <p id="test">Chu Thế Toàn <b>bold</b> Vẫn là CHu Thế Toàn</p>
   
-  <button>Click me</button>
+  <button id="btn1"> Text</button>
+  <button id="btn2"> HTML</button>
   
     
 </body>
