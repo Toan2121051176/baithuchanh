@@ -4,29 +4,19 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-    $("#flip").click(function(){
-    $("#panel").slideDown("slow");
+    $("button").click(function(){
+    $("div").animate({left: '250px'});
   });
 });
-</script>
-<style> 
-#panel, #flip {
-  padding: 5px;
-  text-align: center;
-  background-color: #aa3382;
-  border: solid 1px #dc0e0e;
-}
-
-#panel {
-  padding: 50px;
-  display: none;
-}
-</style>
+</script> 
 </head>
 <body>
- 
-<div id="flip">Nhấn vào đây để biết tôi tên j</div>
-<div id="panel">Chu Thế Toàn</div>
+
+<button>nhấn để di chuyển</button>
+
+
+
+<div style="background:#d31316;height:100px;width:150px;position:absolute;">Chu Thế Toàn</div>
 
 </body>
 </html>
