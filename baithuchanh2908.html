@@ -1,17 +1,52 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <litle>CHu Thế Toàn </litle>
-    </head>
-    <body>
-        <h3>QUIT THE GAME?</h3>
-        <from action="8-ifResylt.php" method="get">
-            <select name="response">
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-            </select>
-            <input type="submit" value="Submit">
-        </from>
-    </body>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Trang web chuyển đổi ngoại tệ sang VND</title>
+</head>
+<body>
+  <h1>Trang web chuyển đổi ngoại tệ sang VND</h1>
+  <p>Dữ liệu tỷ giá quy đổi được lấy từ trang web của Vietcombank</p>
+  <table border="1">
+    <tr>
+      <th>Mã tiền tệ</th>
+      <th>Tên tiền tệ</th>
+      <th>Mua vào</th>
+      <th>Bán ra</th>
+    </tr>
+    <?php
+    // Hiển thị các đơn vị tiền tệ và tỷ giá quy đổi
+    foreach ($currency as $code => $data) {
+      echo "<tr>";
+      echo "<td>$code</td>";
+      echo "<td>{$data['name']}</td>";
+      echo "<td>{$data['buy']}</td>";
+      echo "<td>{$data['sell']}</td>";
+      echo "</tr>";
+    }
+    ?>
+  </table>
+  <form method="post" action="">
+    <p>Nhập số tiền và chọn đơn vị tiền tệ để chuyển đổi sang VND</p>
+    <p>
+      <input type="number" name="amount" value="<?php echo $amount; ?>">
+      <select name="code">
+        <?php
+        // Hiển thị các đơn vị tiền tệ để người dùng chọn
+        foreach ($currency as $code => $data) {
+          $selected = ($code == $code) ? "selected" : "";
+          echo "<option value='$code' $selected>$code</option>";
+        }
+        ?>
+      </select>
+      <input type="submit" value="Chuyển đổi">
+    </p>
+  </form>
+  <?php
+  // Hiển thị kết quả chuyển đổi
+  if ($amount > 0) {
+    echo "<p>$amount $code = $result VND</p>";
+  }
+  ?>
+</body>
 </html>
