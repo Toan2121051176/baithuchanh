@@ -18,15 +18,15 @@ if ($_GET["currency"] == "USD")
 {
   echo $amount * $USD;
 }
-if ($_GET["currency"] == "EUR")
+elseif ($_GET["currency"] == "EUR")
 {
   echo $amount * $EUR;
 }
-if ($_GET["currency"] == "SGD")
+elseif ($_GET["currency"] == "SGD")
 {
   echo $amount * $SGD;
 }
-if ($_GET["currency"] == "JPY")
+elseif ($_GET["currency"] == "JPY")
 {
   echo $amount * $JPY;
 }
