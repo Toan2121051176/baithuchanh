@@ -14,24 +14,24 @@
 </style>
 <body style="background-color: black;">
 <?php
-$currency = $_GET['currency'];
-echo " $amount $currency is equal";
-switch ($curency)
+if ($_GET["currency"] == "USD")
 {
-  case "USD";
-   echo $amount * $USD;
-   break;
-  case "EUR";
-   echo $amount * $EUR;
-   break;
-  case "SGD";
-   echo $amount * $SGD;
-   break;
-  case "JPY";
-   echo $amount * $JPY;
-   break;
-  
+  echo $amount * $USD;
 }
+if ($_GET["currency"] == "EUR")
+{
+  echo $amount * $EUR;
+}
+if ($_GET["currency"] == "SGD")
+{
+  echo $amount * $SGD;
+}
+if ($_GET["currency"] == "JPY")
+{
+  echo $amount * $JPY;
+}
+  
+
 ?>
 </body>
 
