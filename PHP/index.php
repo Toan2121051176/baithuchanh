@@ -14,14 +14,24 @@
 </style>
 <body style="background-color: black;">
 <?php
-$date_now = date("d");
-$month_now = date("m");
-
-if($date_now == "14" && $month_now == "11"){
-  echo "<h1>DUNG</h1>";
+$currency = $_GET['currency'];
+echo " $amount $currency is equal";
+switch ($curency)
+{
+  case "USD";
+   echo $amount * $USD;
+   break;
+  case "EUR";
+   echo $amount * $EUR;
+   break;
+  case "SGD";
+   echo $amount * $SGD;
+   break;
+  case "JPY";
+   echo $amount * $JPY;
+   break;
+  
 }
-else echo "<h1>SAI</h1>";
-
 ?>
 </body>
 
