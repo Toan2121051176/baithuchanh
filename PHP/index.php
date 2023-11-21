@@ -1,38 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/form.css">
-  <title>CHu Thế Toàn</title>
-</head>
-<style>
-  h1{
-    color: white;
-    font-size: 200px;
-  }
-</style>
-<body style="background-color: black;">
+
 <?php
-if ($_GET["currency"] == "USD")
-{
-  echo $amount * $USD;
-}
-elseif ($_GET["currency"] == "EUR")
-{
-  echo $amount * $EUR;
-}
-elseif ($_GET["currency"] == "SGD")
-{
-  echo $amount * $SGD;
-}
-elseif ($_GET["currency"] == "JPY")
-{
-  echo $amount * $JPY;
-}
+$exchangeRate = array(22300, 27300, 17000, 120,);
+echo "<h3>Ẽchange rate to VND</h3>"
+echo "USD: $ẽchangeRate[0]<br>";
+echo "EUR: $ẽchangeRate[1]<br>";
+echo "SGD: $ẽchangeRate[2]<br>";
+echo "JPY: $ẽchangeRate[3]<br>";
   
 
 ?>
-</body>
-
-</html>
