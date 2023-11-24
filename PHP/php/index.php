@@ -1,21 +1,7 @@
 <?php 
-echo "<select>";
-for ($day = 1; $day <= 31; $day++) {
-    echo "<option value=\"$day\">$day</option>";
-}
-echo "</select>";
-
-echo "<select>";
-for ($month = 1; $month <= 12; $month++) {
-    echo "<option value=\"$month\">$month</option>";
-}
-echo "</select>";
-
-
-echo "<select>";
-
-for ($year = 1900; $year <= date('Y'); $year++) {
-    echo "<option value=\"$year\">$year</option>";
-}
-echo "</select>";
+   $items = array('1.jpg', '2.jpg', '3.jpg', '4.jpg');
+   foreach($items as $item)
+   {
+    echo "<img src='images/$item' width = 50px height =50px alt='$item'>"
+   }
 ?>
