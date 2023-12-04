@@ -1,10 +1,6 @@
 <?php
-$severname= "localhost";
-$username="root";
-$password= "";
-$db = "oderfood";
-$conn = new mysqli($severname,$username,$password,$db);
-if ($conn->connect_error) {
-    echo"Kết nối không thành công:". $conn->connect_error;
-}
+require('connect.php');
+$addsql="insert into products (id,name,quality,price) values('DU01','Coca Cola','10','15000')";
+$conn->query($addsql);
+$conn->close();
 ?>
